@@ -35,13 +35,13 @@
             <a target="_blank" href="https://github.com/HsinTzuLai">GitHub</a>
             <a target="_blank" href="https://www.linkedin.com/in/hsintzu-lai-333032263/">LinkedIn</a>
             <div id="play-game">
-            <button onclick="">Play game</button>
+            <button onclick="playGame()">Play game</button>
             </div>
-            <div class="color-div">
+            <div style="display: none;" class="color-div">
             <h4>Pick a color</h4>
             <p style="display: none;">Great.. now it's ruined!</p>
-            <input type="color" id="color-picker" onchange="" value="#0084ff" />
-            <button style="display: none;" onclick="">Reset</button>
+            <input type="color" id="color-picker" onchange="changColor()" value="#0055ff" />
+            <button style="display: none;" onclick="resetColor()">Reset</button>
             </div>
         </div>
         </section>
@@ -63,7 +63,6 @@
             <tr>
                 <td>Python</td>
                 <td>Data analysis</td>
-                <td>i dont know</td>
             </tr>
             <tr>
                 <td>Web</td>
@@ -82,11 +81,84 @@
             <div class="cards-grid">
                 <div class="project-card">
                     <div>
-                        <p>July 1, 2023</p>
-                        <h4>City Mesh Network of IOT</h4>
-
+                        <p>March 1, 2025</p>
+                        <h4>Brogram</h4>
+                        <div class="tech-list">
+                            <div class="card-button-secondary">
+                                <p>FantaCSS</p>
+                            </div>
+                            <div class="card-button-secondary">
+                                <p>ReactJS</p>
+                            </div>
+                            <div class="card-button-secondary">
+                                <p>JavaScrip</p>
+                            </div>
+                        </div>
+                        <p>The Simple 30 Workouts Training Plan</p>
+                        <div class="project-links">
+                            <a target="_blank" href="">Live</a>
+                            <a target="_blank" href="https://github.com/HsinTzuLai/Web-portfolio">GitHub</a>
+                        </div>
+                    </div>
+                    <div class="img-div">
+                        <img class="big-img" src="/1_web_portfolio/public/favicon.png" alt="smoljames-thumbnail"/>
                     </div>
                 </div>
+
+                <div class="project-card">
+                    <div>
+                        <p>March 1, 2025</p>
+                        <h4>Smoldev</h4>
+                        <div class="tech-list">
+                            <div class="card-button-secondary">
+                                <p>NextJS</p>
+                            </div>
+                            <div class="card-button-secondary">
+                                <p>Python</p>
+                            </div>
+                            <div class="card-button-secondary">
+                                <p>Python</p>
+                            </div>
+                        </div>
+                        <p>Smoldev is a hub for all things learning to code and landing a job as a software developer.</p>
+                        <div class="project-links">
+                            <a target="_blank" href="">Live</a>
+                            <a target="_blank" href="">GitHub</a>
+                        </div>
+                    </div>
+                    <div class="img-div">
+                        <img class="big-img" src="/1_web_portfolio/public/favicon.png" alt="smoljames-thumbnail"/>
+                    </div>
+                </div>
+
+
+                <div class="project-card">
+                    <div>
+                        <p>March 1, 2025</p>
+                        <h4>Smoldev</h4>
+                        <div class="tech-list">
+                            <div class="card-button-secondary">
+                                <p>NextJS</p>
+                            </div>
+                            <div class="card-button-secondary">
+                                <p>Python</p>
+                            </div>
+                            <div class="card-button-secondary">
+                                <p>Python</p>
+                            </div>
+                        </div>
+                        <p>Smoldev is a hub for all things learning to code and landing a job as a software developer.</p>
+                        <div class="project-links">
+                            <a target="_blank" href="">Live</a>
+                            <a target="_blank" href="">GitHub</a>
+                        </div>
+                    </div>
+                    <div class="img-div">
+                        <img class="big-img" src="/1_web_portfolio/public/favicon.png" alt="smoljames-thumbnail"/>
+                    </div>
+                </div>
+
+
             </div>
 
         </section>
@@ -94,6 +166,37 @@
     <footer>
         <p>By <a href="https://www.vanessalai.com" target="_blank">Vanessalai</a> the repo on <a target="_blank" href="">GitHub</a></p>
     </footer>
-    <script></script>
+    <script>
+        //this is for color switch game
+        const body = document.querySelector('body')
+        const colorInput = document.getElementById('color-picker')
+        const colorDiv = document.querySelector('.color-div')
+        const hiddenText = document.querySelector('.color-div p')
+        const resetBtn = document.querySelector('.color-div button')
+        const playBtn = document.getElementById('play-game')
+
+        function playGame() {
+            colorDiv.style.display = 'block'
+            playBtn.style.display = 'none'
+        }
+
+        function changColor() {
+            const selectedColor = colorInput.value
+            body.style.background = selectedColor
+            resetBtn.style.display = 'block'
+            hiddenText.style.display = 'block'
+            colorInput.style.display = 'none'
+        }
+        function resetColor() {
+            body.style.background = 'white'
+            colorInput.style.display = 'block'
+            playBtn.style.display = 'block'
+
+            hiddenText.style.display = 'none'
+            resetBtn.style.display = 'none'
+            colorDiv.style.display = 'none'
+
+        }
+    </script>
 </body>
 </html>
